@@ -1,0 +1,12 @@
+global-styling:
+  css:
+    theme:
+      css/plugin.css: {}
+      css/style.css: {}
+      https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700: {}
+      css/devblog-drupal.css: {}
+  js:
+    js/plugin.js: {}
+    js/scripts.js: {}
+  dependencies:
+    - core/jquery

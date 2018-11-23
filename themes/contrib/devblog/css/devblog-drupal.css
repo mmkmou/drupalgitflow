@@ -1,0 +1,9 @@
+.my-pic nav {
+  position: static;
+}
+.form-actions {
+  text-align: center;
+}
+.form-actions .load-more-button {
+  display: inline-block;
+}
