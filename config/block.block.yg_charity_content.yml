@@ -1,0 +1,22 @@
+uuid: a4ef9839-f27a-49b6-a655-e76ebb8122da
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yg_charity
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: yg_charity_content
+theme: yg_charity
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

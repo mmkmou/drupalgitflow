@@ -1,0 +1,22 @@
+uuid: c67e27e5-e2e1-4e76-b7db-e73bd3d78254
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - devblog
+_core:
+  default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
+id: devblog_search
+theme: devblog
+region: header
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }

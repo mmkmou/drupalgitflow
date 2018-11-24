@@ -1,0 +1,22 @@
+uuid: 96cb6e10-0c74-49fb-8238-87af935382e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yg_charity
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: yg_charity_breadcrumbs
+theme: yg_charity
+region: navigation
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

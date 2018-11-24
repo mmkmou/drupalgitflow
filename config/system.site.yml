@@ -1,0 +1,14 @@
+uuid: 94fe4c6e-e4a2-493e-9549-ba91dc85ecab
+name: 'Drupal SN History '
+mail: we@drupal.dru
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
