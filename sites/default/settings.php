@@ -779,14 +779,10 @@ $settings['entity_update_batch_size'] = 50;
 //   'driver' => 'mysql',
 // );
 // $config_directories['sync'] = 'sites/default/files/config_ei1W4KsYfxYVTFiB7-0NPX3si_NWyspNZQTcAN2MwjEP1nciGZOIvYHfxScqYHPm3fVRwHuyCw/sync';
-$databases['default']['default'] = array (
-  'database' => 'service',
-  'username' => 'service',
-  'password' => 'passer',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
+
+$local_settings = dirname(__FILE__) . '/settings.local.php';
+if (file_exists($local_settings)) {
+  include $local_settings;
+}
+
 $config_directories['sync'] = 'config';
