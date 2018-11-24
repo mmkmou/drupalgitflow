@@ -1,0 +1,22 @@
+uuid: 83108f4a-61a3-4c6e-83c2-33407d12f4f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - devblog
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: devblog_breadcrumbs
+theme: devblog
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

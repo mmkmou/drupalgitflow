@@ -1,0 +1,22 @@
+uuid: 9b5f5769-fbfb-46b5-923e-9a1b59e6234f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - devblog
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: devblog_content
+theme: devblog
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

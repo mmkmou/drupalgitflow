@@ -1,0 +1,22 @@
+uuid: 05f4d9ec-aa8b-4370-a17c-8823ce78646d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - yg_charity
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: yg_charity_local_tasks
+theme: yg_charity
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

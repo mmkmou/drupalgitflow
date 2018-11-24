@@ -1,0 +1,21 @@
+facebook: 'https://www.facebook.com'
+twitter: 'https://www.twitter.com'
+instagram: 'https://www.instagram.com'
+linkedin: 'https://www.linkedin.com'
+title: 'Become a volunteer'
+description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..'
+button_text: 'Join With us'
+button_link: '#'
+_core:
+  default_config_hash: 4dOcPzKrG6RN3b9HSSP8xZPEJhqo-FhLnIsuoB8YP8U
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 0
+  path: 'public://drupal_ong.png'
+favicon:
+  use_default: 1
+background_image: {  }
