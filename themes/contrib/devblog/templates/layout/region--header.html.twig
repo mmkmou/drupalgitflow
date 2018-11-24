@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ * - social_media: Social media links as defined in theme settings.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% if content %}
+  <div{{ attributes.addClass('about-fixed') }}>
+    <div class="my-pic">
+      {{ content }}
+    </div>
+    <div class="my-detail">
+      <div class="white-spacing">
+        <h1>{{ site_name }}</h1>
+        <span>{{ site_slogan }}</span>
+      </div>
+      {% if social_media %}
+      <ul class="social-icon">
+        {% if social_media.facebook %}
+        <li><a href="{{ social_media.facebook }}" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
+        {% endif %}
+        {% if social_media.twitter %}
+        <li><a href="{{ social_media.twitter }}" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
+        {% endif %}
+        {% if social_media.linkedin %}
+        <li><a href="{{ social_media.linkedin }}" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+        {% endif %}
+        {% if social_media.github %}
+        <li><a href="{{ social_media.github }}" target="_blank" class="github"><i class="fa fa-github"></i></a></li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

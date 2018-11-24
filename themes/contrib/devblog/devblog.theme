@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the devblog theme.
+ */
+use Drupal\block\Entity\Block;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+* Implements theme_settings_alter().
+*/
+function devblog_form_system_theme_settings_alter(&$form, FormStateInterface &$form_state, $form_id = NULL) {
+  if (isset($form_id)) {
+    return;
+  }
+  $form['social_media'] = array(
+    '#type'   => 'details',
+    '#title'  => t('Social Media Links'),
+    '#open'   => TRUE,
+  );
+  $form['social_media']['facebook'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Facebook'),
+    '#default_value' => theme_get_setting('facebook'),
+    '#description'   => t("Full link to the facebook profile."),
+  );
+  $form['social_media']['twitter'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Twitter'),
+    '#default_value' => theme_get_setting('twitter'),
+    '#description'   => t("Full link to the twitter profile."),
+  );
+  $form['social_media']['linkedin'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Linkedin'),
+    '#default_value' => theme_get_setting('linkedin'),
+    '#description'   => t("Full link to the linkedin profile."),
+  );
+  $form['social_media']['github'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Github'),
+    '#default_value' => theme_get_setting('github'),
+    '#description'   => t("Full link to the github profile."),
+  );
+
+  $form['copyright'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Copyright'),
+    '#default_value' => theme_get_setting('copyright'),
+    '#description'   => t("Copyright text for the site."),
+  );
+}
+
+/**
+* Implements template_preprocess_page().
+*/
+function devblog_preprocess_page(&$variables) {
+  $variables['copyright'] = theme_get_setting('copyright');
+}
+/**
+* Implements template_preprocess_page().
+*/
+function devblog_preprocess_page_title(&$variables) {
+  $is_front = \Drupal::service('path.matcher')->isFrontPage();
+  if ($is_front) {
+    $variables['title'] = 'My Blog';
+  }
+  else {
+    $variables['title'] = 'Back Home';
+  }
+}
+/**
+* Implements template_preprocess_region().
+*/
+function devblog_preprocess_region(&$variables) {
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+  $variables['site_slogan'] = \Drupal::config('system.site')->get('slogan');
+  $variables['social_media']['facebook'] = theme_get_setting('facebook');
+  $variables['social_media']['twitter'] = theme_get_setting('twitter');
+  $variables['social_media']['linkedin'] = theme_get_setting('linkedin');
+  $variables['social_media']['github'] = theme_get_setting('github');
+}
+
+/**
+* Implements hook_preprocess_block().
+*/
+function devblog_preprocess_block(&$variables) {
+  if (!empty($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+    if ($block) {
+      $variables['content']['#attributes']['region'] = $block->getRegion();
+    }
+  }
+}
+
+/**
+* Implements hook_theme_suggestions_menu_alter().
+*/
+function devblog_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  if (isset($variables['attributes']['region'])) {
+    array_splice($suggestions, 1, 0, 'menu__' . $variables['attributes']['region']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_links().
+ */
+function devblog_preprocess_links(&$variables) {
+  if (isset($variables['links']['node-readmore'])) {
+    $variables['links']['node-readmore']['link']['#options']['attributes']['class'][] = 'button button-style button-anim fa fa-long-arrow-right';
+  }
+
+  if (isset($variables['links']['comment-add'])) {
+    $variables['links']['comment-add']['link']['#options']['attributes']['class'][] = 'button button-style button-anim fa fa-long-arrow-right';
+  }
+}

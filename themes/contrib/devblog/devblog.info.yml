@@ -1,0 +1,20 @@
+name: devBlog
+type: theme
+description: 'devBlog - Personal Blog Template'
+# core: 8.x
+base theme: stable
+
+libraries:
+  - devblog/global-styling
+
+regions:
+  header: 'Header'
+  title: 'Title'
+  content: Content
+  footer: 'Footer'
+
+# Information added by Drupal.org packaging script on 2017-08-28
+version: '8.x-1.0-alpha1'
+core: '8.x'
+project: 'devblog'
+datestamp: 1503937446
